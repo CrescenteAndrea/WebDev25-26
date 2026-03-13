@@ -9,7 +9,7 @@ async function droniCritici(){
     }
 
     const data = await response.json();
-    const drones = data.drones; //estrai l'array dei droni dalla risposta
+    const drones = data.drones; 
 
     const critical = [];
 
@@ -19,7 +19,7 @@ async function droniCritici(){
         const isCritical = d.battery < 30 || d.status === "maintenance" || d.maintenance.issues.length > 0;
 
         if(isCritical){
-            critical.push(d); //aggiungi il drone all'array dei critici
+            critical.push(d); 
         }
     }
 
@@ -49,3 +49,4 @@ async function droniCritici(){
     }
 }
 droniCritici().then(result => console.log(result));
+
